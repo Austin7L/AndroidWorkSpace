@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edtFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:ems="10"
+            android:hint="FirstName"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/edtLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:hint="LastName"
+            android:inputType="textPersonName"
+            />
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textPersonName"
+            />
+
+        <Button
+            android:id="@+id/btnRegesiter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:onClick="onClickButton"
+            android:text="Button" />
+
+        <TextView
+            android:id="@+id/txtFirstName"
+            android:layout_width="273dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="44dp"
+            android:text="FirstName"
+            />
+
+        <TextView
+            android:id="@+id/txtLastName"
+            android:layout_width="273dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="32dp"
+            android:text="LastName"
+            />
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="273dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="40dp"
+            android:text="Email"
+            />
+
+        <Button
+            android:id="@+id/btnToCalculatorActive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btnSwitchCalculatorActive"
+            android:text="Switch To Calculator Activity"
+            />
+    </LinearLayout>
+</RelativeLayout>
