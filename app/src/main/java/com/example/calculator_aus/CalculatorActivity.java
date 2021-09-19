@@ -10,7 +10,8 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class CalculatorActivity extends AppCompatActivity {
-    private String num1, num2 = "";
+    private String num1 = "";
+    private String num2 = "";
     private boolean dotFlag = false;
     private boolean countFlag = false;
     private String todo = "";
@@ -41,69 +42,39 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     public void onClickBtn1(View view) {
-        if(countFlag) {
-            num2 += 1;
-            TextView txtResultView = findViewById(R.id.txtResultView);
-            txtResultView.setText(num2.toString());
-        }else {
-            num1 += 1;
-            TextView txtResultView = findViewById(R.id.txtResultView);
-            txtResultView.setText(num1.toString());
-        }
+        doShowOnView("1");
     }
 
     public void onClickBtn2(View view) {
-        if(countFlag) {
-            num2 += 2;
-            TextView txtResultView = findViewById(R.id.txtResultView);
-            txtResultView.setText(num2.toString());
-        }else {
-            num1 += 2;
-            TextView txtResultView = findViewById(R.id.txtResultView);
-            txtResultView.setText(num1.toString());
-        }
+        doShowOnView("2");
     }
 
     public void onClickBtn3(View view) {
-        num1 += 3;
-        TextView txtResultView = findViewById(R.id.txtResultView);
-        txtResultView.setText(num1.toString());
+        doShowOnView("3");
     }
 
     public void onClickBtn4(View view) {
-        num1 += 4;
-        TextView txtResultView = findViewById(R.id.txtResultView);
-        txtResultView.setText(num1.toString());
+        doShowOnView("4");
     }
 
     public void onClickBtn5(View view) {
-        num1 += 5;
-        TextView txtResultView = findViewById(R.id.txtResultView);
-        txtResultView.setText(num1.toString());
+        doShowOnView("5");
     }
 
     public void onClickBtn6(View view) {
-        num1 += 6;
-        TextView txtResultView = findViewById(R.id.txtResultView);
-        txtResultView.setText(num1.toString());
+        doShowOnView("6");
     }
 
     public void onClickBtn7(View view) {
-        num1 += 7;
-        TextView txtResultView = findViewById(R.id.txtResultView);
-        txtResultView.setText(num1.toString());
+        doShowOnView("7");
     }
 
     public void onClickBtn8(View view) {
-        num1 += 8;
-        TextView txtResultView = findViewById(R.id.txtResultView);
-        txtResultView.setText(num1.toString());
+        doShowOnView("8");
     }
 
     public void onClickBtn9(View view) {
-        num1 += 9;
-        TextView txtResultView = findViewById(R.id.txtResultView);
-        txtResultView.setText(num1.toString());
+        doShowOnView("9");
     }
 
     public void onClickBtnClear(View view) {
@@ -150,5 +121,17 @@ public class CalculatorActivity extends AppCompatActivity {
         txtResultView.setText(result.toString());
         countFlag = false;
         num2 = "";
+    }
+
+    private void doShowOnView(String num) {
+        if(countFlag) {
+            num2 += num;
+            TextView txtResultView = findViewById(R.id.txtResultView);
+            txtResultView.setText(num2.toString());
+        }else{
+            num1 += num;
+            TextView txtResultView = findViewById(R.id.txtResultView);
+            txtResultView.setText(num1.toString());
+        }
     }
 }
