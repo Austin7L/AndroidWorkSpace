@@ -15,6 +15,7 @@ public class CalculatorActivity extends AppCompatActivity {
     private boolean dotFlag = false;
     private boolean countFlag = false;
     private String todo = "";
+    private String lastNum = "";
     private String result =  "";
 
 
@@ -78,7 +79,6 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     public void onClickBtnClear(View view) {
-        num1 = "";
         TextView txtResultView = findViewById(R.id.txtResultView);
         txtResultView.setText("");
         dotFlag = false;
@@ -111,13 +111,19 @@ public class CalculatorActivity extends AppCompatActivity {
     public void onClickEquals(View view) {
         TextView txtResultView = findViewById(R.id.txtResultView);
         if(todo.equals("plus")) {
-            result = String.valueOf(Integer.valueOf(num1) + Integer.valueOf(num2));
-
+            if(num2.equals("")) { //when click again but haven't input num2
+                result = String.valueOf(Integer.valueOf(num1) + Integer.valueOf(lastNum));
+            }else {
+                result = String.valueOf(Integer.valueOf(num1) + Integer.valueOf(num2));
+            }
         }else if(todo.equals("")) {
 
         }else{
 
         }
+        if(!num2.equals("")) lastNum = num2;
+        num1 = result;
+        num2 = "";
         txtResultView.setText(result.toString());
         countFlag = false;
         num2 = "";
