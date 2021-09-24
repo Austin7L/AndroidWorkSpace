@@ -10,13 +10,13 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class CalculatorActivity extends AppCompatActivity {
-    private String num1 = "";
-    private String num2 = "";
-    private boolean dotFlag = false;
-    private boolean countFlag = false;
-    private String todo = "";
-    private String lastNum = "";
-    private String result =  "";
+    private String num1 = ""; //第一個數
+    private String num2 = ""; //第二個數
+    private boolean dotFlag = false; //記錄是否點擊"."
+    private boolean countFlag = false; //記錄是否點擊運算元
+    private String todo = ""; //運算子
+    private String lastNum = ""; //上一個計算數值
+    private String result =  ""; //結果
 
 
     @Override
@@ -78,110 +78,111 @@ public class CalculatorActivity extends AppCompatActivity {
         TextView txtResultView = findViewById(R.id.txtResultView);
         txtResultView.setText("");
         dotFlag = false;
-        countFlag =false;
+        countFlag = false;
         num1 = "";
         num2 = "";
     }
 
     public void onClickDot(View view) {
-        if(!dotFlag) {
-            if(countFlag) {
-                num1 += ".";
-                TextView txtResultView = findViewById(R.id.txtResultView);
-                txtResultView.setText(num1.toString());
-                dotFlag = true;
-            }else {
+        if (!dotFlag) {
+            if (countFlag) {
                 num2 += ".";
                 TextView txtResultView = findViewById(R.id.txtResultView);
                 txtResultView.setText(num2.toString());
-                dotFlag = true;
+            } else {
+                num1 += num1.equals("") ? "0." : ".";
+                TextView txtResultView = findViewById(R.id.txtResultView);
+                txtResultView.setText(num1.toString());
             }
         }
+        dotFlag = true;
     }
     
     public void onClickPlus(View view) {
         countFlag = true;
         todo = "plus";
+        if(!num2.equals("")) {doCalculation();}
     }
     public void onClickMinus(View view) {
         countFlag = true;
         todo = "minus";
+        if(!num2.equals("")) {doCalculation();}
     }
     public void onClickMultiplied(View view) {
         countFlag = true;
         todo = "multiplied";
+        if(!num2.equals("")) {doCalculation();}
     }
     public void onClickDivided(View view) {
         countFlag = true;
         todo = "divided";
+        if(!num2.equals("")) {doCalculation();}
     }
 
     public void onClickEquals(View view) {
-        TextView txtResultView = findViewById(R.id.txtResultView);
-        if(todo.equals("plus")) {
-            if(num2.equals("")) { //when click again but haven't input num2
-                result = String.valueOf(Integer.valueOf(num1) + Integer.valueOf(lastNum));
-            }else {
-                result = String.valueOf(Integer.valueOf(num1) + Integer.valueOf(num2));
-            }
-            if(!num2.equals("")) lastNum = num2;
-            num1 = result;
-            num2 = "";
-            txtResultView.setText(result.toString());
-        }
-        //countFlag = false;
-
-        if(todo.equals("minus")){
-            if(num2.equals("")) {//
-                result = String.valueOf(Integer.valueOf(num1) - Integer.valueOf(lastNum));
-            }else {
-                result = String.valueOf(Integer.valueOf(num1) - Integer.valueOf(num2));
-            }
-            if(!num2.equals("")) lastNum = num2;
-            num1 = result;
-            num2 = "";
-            txtResultView.setText(result.toString());
-        }
-        if(todo.equals("multiplied")){
-            if(num2.equals("")) {//
-                result = String.valueOf(Integer.valueOf(num1) * Integer.valueOf(lastNum));
-            }else {
-                result = String.valueOf(Integer.valueOf(num1) * Integer.valueOf(num2));
-            }
-            if(!num2.equals("")) lastNum = num2;
-            num1 = result;
-            num2 = "";
-            txtResultView.setText(result.toString());
-        }
-        if(todo.equals("divided")){
-            if(num2.equals("")) {//
-                result = String.valueOf(Integer.valueOf(num1) / Integer.valueOf(lastNum));
-            }else {
-                result = String.valueOf(Integer.valueOf(num1) / Integer.valueOf(num2));
-            }
-            if(!num2.equals("")) lastNum = num2;
-            num1 = result;
-            num2 = "";
-            txtResultView.setText(result.toString());
-        }
+        doCalculation();
+        countFlag = false;
+        dotFlag = false;
     }
 
     private void doShowOnView(String num) {
         if(countFlag) {
-            if(!num1.equals(""))
-            {
             num2 += num;
             TextView txtResultView = findViewById(R.id.txtResultView);
             txtResultView.setText(num2.toString());
-            }else{
-                num1 += num;
-                TextView txtResultView = findViewById(R.id.txtResultView);
-                txtResultView.setText(num1.toString());
-            }
         }else{
             num1 += num;
             TextView txtResultView = findViewById(R.id.txtResultView);
             txtResultView.setText(num1.toString());
         }
+    }
+
+    /*
+     * 確認是否為需要呈現小數
+     */
+    private void chkUseDouble() {
+        int dotIndex = result.indexOf('.'); //find dot position
+        String afterDot = result.substring(dotIndex+1, result.length()); //find out integer after the dot
+        if(afterDot.equals("0")) {result = result.substring(0,dotIndex); } //if after dot is 0, means the number has been divided
+    }
+
+    /*
+     * 計算
+     */
+    private void doCalculation() {
+        TextView txtResultView = findViewById(R.id.txtResultView);
+        if(todo.equals("plus")) {
+            if (num2.equals("")) { //when click again but haven't input num2
+                result = String.valueOf(Double.valueOf(num1) + Double.valueOf(lastNum));
+            } else {
+                result = String.valueOf(Double.valueOf(num1) + Double.valueOf(num2));
+            }
+        }
+        if(todo.equals("minus")){
+            if(num2.equals("")) {
+                result = String.valueOf(Double.valueOf(num1) - Double.valueOf(lastNum));
+            }else {
+                result = String.valueOf(Double.valueOf(num1) - Double.valueOf(num2));
+            }
+        }
+        if(todo.equals("multiplied")){
+            if(num2.equals("")) {
+                result = String.valueOf(Double.valueOf(num1) * Double.valueOf(lastNum));
+            }else {
+                result = String.valueOf(Double.valueOf(num1) * Double.valueOf(num2));
+            }
+        }
+        if(todo.equals("divided")){
+            if(num2.equals("")) {
+                result = String.valueOf(Double.valueOf(num1) / Double.valueOf(lastNum));
+            }else {
+                result = String.valueOf(Double.valueOf(num1) / Double.valueOf(num2));
+            }
+        }
+        chkUseDouble();
+        if(!num2.equals("")) lastNum = num2;
+        num1 = result;
+        num2 = "";
+        txtResultView.setText(result.toString());
     }
 }
