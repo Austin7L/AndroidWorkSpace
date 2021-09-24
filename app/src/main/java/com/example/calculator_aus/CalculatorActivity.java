@@ -105,7 +105,18 @@ public class CalculatorActivity extends AppCompatActivity {
     public void onClickPlus(View view) {
         countFlag = true;
         todo = "plus";
-        
+    }
+    public void onClickMinus(View view) {
+        countFlag = true;
+        todo = "minus";
+    }
+    public void onClickMultiplied(View view) {
+        countFlag = true;
+        todo = "multiplied";
+    }
+    public void onClickDivided(View view) {
+        countFlag = true;
+        todo = "divided";
     }
 
     public void onClickEquals(View view) {
@@ -116,17 +127,46 @@ public class CalculatorActivity extends AppCompatActivity {
             }else {
                 result = String.valueOf(Integer.valueOf(num1) + Integer.valueOf(num2));
             }
-        }else if(todo.equals("")) {
-
-        }else{
-
+            if(!num2.equals("")) lastNum = num2;
+            num1 = result;
+            num2 = "";
+            txtResultView.setText(result.toString());
         }
-        if(!num2.equals("")) lastNum = num2;
-        num1 = result;
-        num2 = "";
-        txtResultView.setText(result.toString());
-        countFlag = false;
-        num2 = "";
+        //countFlag = false;
+
+        if(todo.equals("minus")){
+            if(num2.equals("")) {//
+                result = String.valueOf(Integer.valueOf(num1) - Integer.valueOf(lastNum));
+            }else {
+                result = String.valueOf(Integer.valueOf(num1) - Integer.valueOf(num2));
+            }
+            if(!num2.equals("")) lastNum = num2;
+            num1 = result;
+            num2 = "";
+            txtResultView.setText(result.toString());
+        }
+        if(todo.equals("multiplied")){
+            if(num2.equals("")) {//
+                result = String.valueOf(Integer.valueOf(num1) * Integer.valueOf(lastNum));
+            }else {
+                result = String.valueOf(Integer.valueOf(num1) * Integer.valueOf(num2));
+            }
+            if(!num2.equals("")) lastNum = num2;
+            num1 = result;
+            num2 = "";
+            txtResultView.setText(result.toString());
+        }
+        if(todo.equals("divided")){
+            if(num2.equals("")) {//
+                result = String.valueOf(Integer.valueOf(num1) / Integer.valueOf(lastNum));
+            }else {
+                result = String.valueOf(Integer.valueOf(num1) / Integer.valueOf(num2));
+            }
+            if(!num2.equals("")) lastNum = num2;
+            num1 = result;
+            num2 = "";
+            txtResultView.setText(result.toString());
+        }
     }
 
     private void doShowOnView(String num) {
