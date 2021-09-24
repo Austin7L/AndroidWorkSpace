@@ -104,7 +104,7 @@
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickMultiplied"
-                android:text="*" />
+                android:text="＊" />
         </LinearLayout>
 
         <LinearLayout
@@ -142,7 +142,7 @@
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickMinus"
-                android:text="-" />
+                android:text="－" />
         </LinearLayout>
 
         <LinearLayout
@@ -180,7 +180,7 @@
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickPlus"
-                android:text="+" />
+                android:text="＋" />
         </LinearLayout>
     </LinearLayout>
 

@@ -46,9 +46,7 @@ public class CalculatorActivity extends AppCompatActivity {
         doShowOnView("1");
     }
 
-    public void onClickBtn2(View view) {
-        doShowOnView("2");
-    }
+    public void onClickBtn2(View view) { doShowOnView("2"); }
 
     public void onClickBtn3(View view) {
         doShowOnView("3");
@@ -58,9 +56,7 @@ public class CalculatorActivity extends AppCompatActivity {
         doShowOnView("4");
     }
 
-    public void onClickBtn5(View view) {
-        doShowOnView("5");
-    }
+    public void onClickBtn5(View view) { doShowOnView("5"); }
 
     public void onClickBtn6(View view) {
         doShowOnView("6");
@@ -82,6 +78,7 @@ public class CalculatorActivity extends AppCompatActivity {
         TextView txtResultView = findViewById(R.id.txtResultView);
         txtResultView.setText("");
         dotFlag = false;
+        countFlag =false;
         num1 = "";
         num2 = "";
     }
@@ -171,9 +168,16 @@ public class CalculatorActivity extends AppCompatActivity {
 
     private void doShowOnView(String num) {
         if(countFlag) {
+            if(!num1.equals(""))
+            {
             num2 += num;
             TextView txtResultView = findViewById(R.id.txtResultView);
             txtResultView.setText(num2.toString());
+            }else{
+                num1 += num;
+                TextView txtResultView = findViewById(R.id.txtResultView);
+                txtResultView.setText(num1.toString());
+            }
         }else{
             num1 += num;
             TextView txtResultView = findViewById(R.id.txtResultView);
