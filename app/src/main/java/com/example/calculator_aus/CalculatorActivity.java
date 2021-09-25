@@ -6,13 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import org.w3c.dom.Text;
 
 public class CalculatorActivity extends AppCompatActivity {
     private String num1 = ""; //第一個數
     private String num2 = ""; //第二個數
-    private boolean dotFlag = false; //記錄是否點擊"."
+    private boolean dotFlag = false; //紀錄是否存在"."
     private boolean countFlag = false; //記錄是否點擊運算元
     private String todo = ""; //運算子
     private String lastNum = ""; //上一個計算數值
@@ -100,21 +99,25 @@ public class CalculatorActivity extends AppCompatActivity {
     
     public void onClickPlus(View view) {
         countFlag = true;
+        dotFlag = false;
         todo = "plus";
         if(!num2.equals("")) {doCalculation();}
     }
     public void onClickMinus(View view) {
         countFlag = true;
+        dotFlag = false;
         todo = "minus";
         if(!num2.equals("")) {doCalculation();}
     }
     public void onClickMultiplied(View view) {
         countFlag = true;
+        dotFlag = false;
         todo = "multiplied";
         if(!num2.equals("")) {doCalculation();}
     }
     public void onClickDivided(View view) {
         countFlag = true;
+        dotFlag = false;
         todo = "divided";
         if(!num2.equals("")) {doCalculation();}
     }
@@ -157,22 +160,19 @@ public class CalculatorActivity extends AppCompatActivity {
             } else {
                 result = String.valueOf(Double.valueOf(num1) + Double.valueOf(num2));
             }
-        }
-        if(todo.equals("minus")){
+        }else if(todo.equals("minus")){
             if(num2.equals("")) {
                 result = String.valueOf(Double.valueOf(num1) - Double.valueOf(lastNum));
             }else {
                 result = String.valueOf(Double.valueOf(num1) - Double.valueOf(num2));
             }
-        }
-        if(todo.equals("multiplied")){
+        }else if(todo.equals("multiplied")){
             if(num2.equals("")) {
                 result = String.valueOf(Double.valueOf(num1) * Double.valueOf(lastNum));
             }else {
                 result = String.valueOf(Double.valueOf(num1) * Double.valueOf(num2));
             }
-        }
-        if(todo.equals("divided")){
+        }else if(todo.equals("divided")){
             if(num2.equals("")) {
                 result = String.valueOf(Double.valueOf(num1) / Double.valueOf(lastNum));
             }else {
