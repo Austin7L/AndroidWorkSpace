@@ -24,14 +24,27 @@
             app:layout_constraintHorizontal_bias="0.415"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnRegesiter" />
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/btnClear"
+                android:layout_width="match_parent"
+                android:layout_height="79dp"
+                android:layout_weight="1"
+                android:onClick="onClickBtnClear"
+                android:text="C" />
 
-        <Button
-            android:id="@+id/btnClear"
-            android:layout_width="match_parent"
-            android:layout_height="79dp"
-            android:onClick="onClickBtnClear"
-            android:text="C" />
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="206dp"
+                android:layout_height="79dp"
+                android:layout_weight="1"
+                android:onClick="onClickBtnBack"
+                android:text="←" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -150,8 +163,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="83dp"
-            android:orientation="horizontal">
+            android:layout_height="83dp">
 
             <Button
                 android:id="@+id/btn0"

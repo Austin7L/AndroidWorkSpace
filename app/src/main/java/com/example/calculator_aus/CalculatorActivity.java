@@ -80,7 +80,23 @@ public class CalculatorActivity extends AppCompatActivity {
         countFlag = false;
         num1 = "";
         num2 = "";
+        todo = "";
+        lastNum = "";
+        result =  "";
     }
+    public void onClickBtnBack(View view) {
+
+        if(countFlag && num2 != ""){
+            num2 = num2.substring(0,num2.length()-1);
+            TextView txtResultView = findViewById(R.id.txtResultView);
+            txtResultView.setText(num2.toString());
+        } else if (!countFlag && num1 != ""){
+            num1 = num1.substring(0,num1.length()-1);
+            TextView txtResultView = findViewById(R.id.txtResultView);
+            txtResultView.setText(num1.toString());
+        }
+    }
+
 
     public void onClickDot(View view) {
         if (!dotFlag) {
