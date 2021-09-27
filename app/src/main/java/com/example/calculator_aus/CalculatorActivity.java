@@ -87,11 +87,19 @@ public class CalculatorActivity extends AppCompatActivity {
     public void onClickBtnBack(View view) {
 
         if(countFlag && num2 != ""){
-            num2 = num2.substring(0,num2.length()-1);
+            if(num2.length() == 0 || num2.length()-1 == 0) {
+                num2 = "";
+            }else{
+                num2 = num2.substring(0,num2.length()-1);
+            }
             TextView txtResultView = findViewById(R.id.txtResultView);
-            txtResultView.setText(num2.toString());
+            txtResultView.setText(num1.toString());
         } else if (!countFlag && num1 != ""){
-            num1 = num1.substring(0,num1.length()-1);
+            if(num1.length() == 0 || num1.length()-1 == 0) {
+                num1 = "";
+            }else{
+                num1 = num1.substring(0,num1.length()-1);
+            }
             TextView txtResultView = findViewById(R.id.txtResultView);
             txtResultView.setText(num1.toString());
         }
@@ -101,7 +109,7 @@ public class CalculatorActivity extends AppCompatActivity {
     public void onClickDot(View view) {
         if (!dotFlag) {
             if (countFlag) {
-                num2 += ".";
+                num2 += num2.equals("") ? "0." : ".";
                 TextView txtResultView = findViewById(R.id.txtResultView);
                 txtResultView.setText(num2.toString());
             } else {
