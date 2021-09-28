@@ -182,7 +182,8 @@ public class CalculatorActivity extends AppCompatActivity {
             if (num2.equals("")) { //when click again but haven't input num2
                 result = String.valueOf(Double.valueOf(num1) + Double.valueOf(lastNum));
             } else {
-                result = String.valueOf(Double.valueOf(num1) + Double.valueOf(num2));
+//                result = String.valueOf(Double.valueOf(num1) + Double.valueOf(num2));
+                result = String.valueOf(Calculation.add(Double.valueOf(num1), Double.valueOf(num2)));
             }
         }else if(todo.equals("minus")){
             if(num2.equals("")) {
