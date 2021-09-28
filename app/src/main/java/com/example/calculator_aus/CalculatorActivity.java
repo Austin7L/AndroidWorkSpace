@@ -93,7 +93,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 num2 = num2.substring(0,num2.length()-1);
             }
             TextView txtResultView = findViewById(R.id.txtResultView);
-            txtResultView.setText(num1.toString());
+            txtResultView.setText(num2.toString());
         } else if (!countFlag && num1 != ""){
             if(num1.length() == 0 || num1.length()-1 == 0) {
                 num1 = "";

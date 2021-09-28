@@ -27,8 +27,8 @@
             android:layout_marginTop="24dp"
             android:ems="10"
             android:hint="LastName"
-            android:inputType="textPersonName"
-            />
+            android:inputType="textPersonName" />
+
         <EditText
             android:id="@+id/edtEmail"
             android:layout_width="wrap_content"
@@ -36,14 +36,15 @@
             android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="Email"
-            android:inputType="textPersonName"
-            />
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/btnRegesiter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
+            android:background="@color/design_default_color_primary"
+            android:backgroundTint="#F32121"
             android:onClick="onClickButton"
             android:text="Button" />
 
@@ -52,31 +53,27 @@
             android:layout_width="273dp"
             android:layout_height="25dp"
             android:layout_marginTop="44dp"
-            android:text="FirstName"
-            />
+            android:text="FirstName" />
 
         <TextView
             android:id="@+id/txtLastName"
             android:layout_width="273dp"
             android:layout_height="25dp"
             android:layout_marginTop="32dp"
-            android:text="LastName"
-            />
+            android:text="LastName" />
 
         <TextView
             android:id="@+id/txtEmail"
             android:layout_width="273dp"
             android:layout_height="25dp"
             android:layout_marginTop="40dp"
-            android:text="Email"
-            />
+            android:text="Email" />
 
         <Button
             android:id="@+id/btnToCalculatorActive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="btnSwitchCalculatorActive"
-            android:text="Switch To Calculator Activity"
-            />
+            android:text="Switch To Calculator Activity" />
     </LinearLayout>
 </RelativeLayout>
