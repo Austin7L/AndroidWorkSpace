@@ -85,7 +85,6 @@ public class CalculatorActivity extends AppCompatActivity {
         result =  "";
     }
     public void onClickBtnBack(View view) {
-
         if(countFlag && num2 != ""){
             if(num2.length() == 0 || num2.length()-1 == 0) {
                 num2 = "";
@@ -179,29 +178,36 @@ public class CalculatorActivity extends AppCompatActivity {
     private void doCalculation() {
         TextView txtResultView = findViewById(R.id.txtResultView);
         if(todo.equals("plus")) {
-            if (num2.equals("")) { //when click again but haven't input num2
-                result = String.valueOf(Double.valueOf(num1) + Double.valueOf(lastNum));
-            } else {
-//                result = String.valueOf(Double.valueOf(num1) + Double.valueOf(num2));
+            if (num2.equals("") && !lastNum.equals("")) { //when click again but haven't input num2
+                result = String.valueOf(Calculation.add(Double.valueOf(num1), Double.valueOf(lastNum)));
+            }else if(num1.equals("") && lastNum.equals("")) {
+                result = String.valueOf(Calculation.add(Double.valueOf(0), Double.valueOf(num2)));
+            }else {
                 result = String.valueOf(Calculation.add(Double.valueOf(num1), Double.valueOf(num2)));
             }
         }else if(todo.equals("minus")){
             if(num2.equals("")) {
-                result = String.valueOf(Double.valueOf(num1) - Double.valueOf(lastNum));
+                result = String.valueOf(Calculation.sub(Double.valueOf(num1), Double.valueOf(lastNum)));
+            }else if(num1.equals("") && lastNum.equals("")) {
+                result = String.valueOf(Calculation.sub(Double.valueOf(0), Double.valueOf(num2)));
             }else {
-                result = String.valueOf(Double.valueOf(num1) - Double.valueOf(num2));
+                result = String.valueOf(Calculation.sub(Double.valueOf(num1), Double.valueOf(num2)));
             }
         }else if(todo.equals("multiplied")){
             if(num2.equals("")) {
-                result = String.valueOf(Double.valueOf(num1) * Double.valueOf(lastNum));
+                result = String.valueOf(Calculation.mul(Double.valueOf(num1), Double.valueOf(lastNum)));
+            }else if(num1.equals("") && lastNum.equals("")) {
+                result = String.valueOf(Calculation.mul(Double.valueOf(1), Double.valueOf(num2)));
             }else {
-                result = String.valueOf(Double.valueOf(num1) * Double.valueOf(num2));
+                result = String.valueOf(Calculation.mul(Double.valueOf(num1), Double.valueOf(num2)));
             }
         }else if(todo.equals("divided")){
             if(num2.equals("")) {
-                result = String.valueOf(Double.valueOf(num1) / Double.valueOf(lastNum));
+                result = String.valueOf(Calculation.div(Double.valueOf(num1), Double.valueOf(lastNum)));
+            }else if(num1.equals("") && lastNum.equals("")) {
+                result = String.valueOf(Calculation.div(Double.valueOf(1), Double.valueOf(num2)));
             }else {
-                result = String.valueOf(Double.valueOf(num1) / Double.valueOf(num2));
+                result = String.valueOf(Calculation.div(Double.valueOf(num1), Double.valueOf(num2)));
             }
         }
         chkUseDouble();
