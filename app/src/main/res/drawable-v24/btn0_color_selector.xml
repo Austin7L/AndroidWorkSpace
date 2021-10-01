@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+drawable:引用的Drawable位圖,我們可以把他放到最前面,就表示組件的正常狀態~
+state_focused:是否獲得焦點
+state_window_focused:是否獲得窗口焦點
+state_enabled:控制項是否可用
+state_checkable:控制項可否被勾選,eg:checkbox
+state_checked:控制項是否被勾選
+state_selected:控制項是否被選擇,針對有滾輪的情況
+state_pressed:控制項是否被按下
+state_active:控制項是否處於活動狀態,eg:slidingTab
+state_single:控制項包含多個子控制項時,確定是否只顯示一個子控制項
+state_first:控制項包含多個子控制項時,確定第一個子控制項是否處於顯示狀態
+state_middle:控制項包含多個子控制項時,確定中間一個子控制項是否處於顯示狀態
+state_last:控制項包含多個子控制項時,確定最後一個子控制項是否處於顯示狀態
+原文網址：https://kknews.cc/news/83aqe8n.html
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@drawable/iconpressbtn0"/>
+<!--    <item android:state_enabled="false" android:drawable="@drawable/iconbtn0"/>-->
+    <item android:drawable="@drawable/iconbtn0"/>
+</selector>

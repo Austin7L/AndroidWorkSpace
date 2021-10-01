@@ -18,7 +18,8 @@
             android:layout_marginTop="52dp"
             android:ems="10"
             android:hint="FirstName"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/edtLastName"
@@ -27,16 +28,24 @@
             android:layout_marginTop="24dp"
             android:ems="10"
             android:hint="LastName"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
 
-        <EditText
-            android:id="@+id/edtEmail"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textPersonName" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/btnRegesiter"

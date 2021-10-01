@@ -29,23 +29,25 @@
         android:layout_height="83dp"
         android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/btnClear"
                 android:layout_width="match_parent"
                 android:layout_height="79dp"
                 android:layout_weight="1"
-                android:radius="60dip"
                 android:onClick="onClickBtnClear"
+                android:radius="60dip"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btnclear_color_selector"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-                android:text="C" />
-
-            <Button
+            <ImageButton
                 android:id="@+id/btnBack"
                 android:layout_width="206dp"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickBtnBack"
-                android:text="←" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/btnback_color_selector"/>
         </LinearLayout>
 
         <LinearLayout
@@ -53,37 +55,43 @@
             android:layout_height="83dp"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn7"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickBtn7"
-                android:text="7" />
+                android:src="@drawable/btn7_color_selector"
+                android:text="7"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-            <Button
+            <ImageButton
+                android:src="@drawable/btn8_color_selector"
                 android:id="@+id/btn8"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickBtn8"
-                android:text="8" />
+                android:text="8"/>
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn9"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickBtn9"
-                android:text="9" />
+                android:src="@drawable/btn9_color_selector"
+                android:text="9"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/button10"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickDivided"
-                android:text="/" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/btndiv_color_selector" />
 
         </LinearLayout>
 
@@ -92,37 +100,44 @@
             android:layout_height="83dp"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn4"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickBtn4"
-                android:text="4" />
+                android:src="@drawable/btn4_color_selector"
+                android:text="4"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn5"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickBtn5"
-                android:text="5" />
+                android:src="@drawable/btn5_color_selector"
+                android:text="5"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn6"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickBtn6"
-                android:text="6" />
+                android:src="@drawable/btn6_color_selector"
+                android:text="6"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/button11"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickMultiplied"
-                android:text="＊" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/btnmult_color_selector" />
         </LinearLayout>
 
         <LinearLayout
@@ -130,75 +145,89 @@
             android:layout_height="83dp"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn1"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickBtn1"
-                android:text="1" />
+                android:src="@drawable/btn1_color_selector"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn2"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickBtn2"
-                android:text="2" />
+                android:src="@drawable/btn2_color_selector"
+                android:text="2"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-            <Button
+            <ImageButton
+                android:src="@drawable/btn3_color_selector"
                 android:id="@+id/btn3"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickBtn3"
-                android:text="3" />
+                android:text="3"/>
 
-            <Button
+            <ImageButton
                 android:id="@+id/button12"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickMinus"
-                android:text="－" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/btnsub_color_selector" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="83dp">
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn0"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickBtn0"
-                android:text="0" />
+                android:src="@drawable/btn0_color_selector"
+                android:text="0"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-            <Button
+
+            <ImageButton
                 android:id="@+id/button14"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickDot"
-                android:text="." />
+                android:scaleType="fitCenter"
+                android:src="@drawable/btndot_color_selector" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/btnResult"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickEquals"
-                android:text="=" />
+                android:src="@drawable/btnequals_color_selector"
+                android:scaleType="fitCenter"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/btnPlus"
                 android:layout_width="wrap_content"
                 android:layout_height="79dp"
                 android:layout_weight="1"
                 android:onClick="onClickPlus"
-                android:text="＋" />
+                android:src="@drawable/btnadd_color_selector"
+                android:scaleType="fitCenter"
+                tools:ignore="SpeakableTextPresentCheck" />
         </LinearLayout>
     </LinearLayout>
+
 
 </RelativeLayout>

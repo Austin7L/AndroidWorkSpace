@@ -4,15 +4,34 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.2980769230769231" />
-        <entry key="..\:/Users/melcy/Desktop/andriondwork/app/src/main/res/drawable/count_btn_edit.xml" value="0.14583333333333334" />
-        <entry key="..\:/Users/melcy/Desktop/andriondwork/app/src/main/res/layout/activity_calculator.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/melcy/Desktop/andriondwork/app/src/main/res/layout/activity_main.xml" value="0.5126315789473684" />
-        <entry key="app/src/main/res/layout/activity_calculator.xml" value="0.19196574811098802" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
+        <entry key="app/src/main/res/drawable-v24/btn0_color_selector.xml" value="0.14375" />
+        <entry key="app/src/main/res/drawable-v24/btn1_color_selector.xml" value="0.2703125" />
+        <entry key="app/src/main/res/drawable-v24/btn2_color_selector.xml" value="0.2703125" />
+        <entry key="app/src/main/res/drawable-v24/btn3_color_selector.xml" value="0.2703125" />
+        <entry key="app/src/main/res/drawable-v24/btn4_color_selector.xml" value="0.2703125" />
+        <entry key="app/src/main/res/drawable-v24/btn5_color_selector.xml" value="0.2703125" />
+        <entry key="app/src/main/res/drawable-v24/btn6_color_selector.xml" value="0.2703125" />
+        <entry key="app/src/main/res/drawable-v24/btn7_color_selector.xml" value="0.2703125" />
+        <entry key="app/src/main/res/drawable-v24/btn8_color_selector.xml" value="0.2703125" />
+        <entry key="app/src/main/res/drawable-v24/btn9_color_selector.xml" value="0.2703125" />
+        <entry key="app/src/main/res/drawable-v24/btnDot_color_selector.xml" value="0.2703125" />
+        <entry key="app/src/main/res/drawable-v24/btnEquals_color_selector.xml" value="0.13229166666666667" />
+        <entry key="app/src/main/res/drawable-v24/btnadd_color_selector.xml" value="0.13229166666666667" />
+        <entry key="app/src/main/res/drawable-v24/btnback_color_selector.xml" value="0.13229166666666667" />
+        <entry key="app/src/main/res/drawable-v24/btnclear_color_selector.xml" value="0.13229166666666667" />
+        <entry key="app/src/main/res/drawable-v24/btndiv_color_selector.xml" value="0.13229166666666667" />
+        <entry key="app/src/main/res/drawable-v24/btndot_color_selector.xml" value="0.13229166666666667" />
+        <entry key="app/src/main/res/drawable-v24/btnequals_color_selector.xml" value="0.13229166666666667" />
+        <entry key="app/src/main/res/drawable-v24/btnmult_color_selector.xml" value="0.13229166666666667" />
+        <entry key="app/src/main/res/drawable-v24/btnsub_color_selector.xml" value="0.13229166666666667" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
+        <entry key="app/src/main/res/layout/activity_calculator.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
